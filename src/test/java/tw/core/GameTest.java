@@ -2,28 +2,16 @@ package tw.core;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
-import com.sun.source.tree.AssertTree;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mock;
 import tw.GuessNumberModule;
 import tw.core.generator.RandomIntGenerator;
 import tw.core.model.GuessResult;
 
 import javax.inject.Inject;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
-import java.util.stream.Collectors;
-
-import static java.util.stream.IntStream.range;
-import static junit.framework.TestCase.assertFalse;
 import static junit.framework.TestCase.assertTrue;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 import static tw.core.GameStatus.CONTINUE;
-import static tw.core.GameStatus.FAIL;
 import static tw.core.GameStatus.SUCCESS;
 
 /**
@@ -73,7 +61,6 @@ public class GameTest {
         assertTrue(game.checkStatus() == CONTINUE);
         game.guess(Answer.createAnswer(gameRandomString));
         assertTrue(game.checkStatus() == SUCCESS);
-
     }
 
 }
